@@ -1,0 +1,15 @@
+{
+    "name": "codearchitect/code_ark",
+    "authors": [
+        {
+            "name": "Indranil Samanta",
+            "email": "codearchitectdeveloper@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
