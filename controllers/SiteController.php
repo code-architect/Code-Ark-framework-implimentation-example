@@ -29,6 +29,7 @@ class SiteController extends Controller
 
     public function contact()
     {
+        print_r($_POST);
         return "handling submitted data from contact method";
     }
 }
