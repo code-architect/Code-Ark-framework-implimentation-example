@@ -4,7 +4,7 @@ namespace app\core;
 /**
  * Class Application
  *
- * @author: Indranil Samanta (code-architec)
+ * @author: Indranil Samanta (code-architect)
  * @package app\core
  */
 class Application

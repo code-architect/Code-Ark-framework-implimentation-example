@@ -45,7 +45,7 @@ class Router
     public function resolve()
     {
         $path = $this->request->getPath();
-        $method = $this->request->getMethod();
+        $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
 
         if($callback === false)
@@ -67,6 +67,7 @@ class Router
     {
         $layoutContent = $this->layoutContent();
         $viewContent = $this->renderOnlyView($view, $params);
+        // TODO: make content more lucid
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
