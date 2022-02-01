@@ -58,10 +58,13 @@ class Router
         }
         if(is_array($callback))
         {
-            $callback[0] = new $callback[0];
+            // this is $callback[0] an instance of the controller
+            Application::$app->controller = new $callback[0];
+            $callback[0] = Application::$app->controller;
         }
         return call_user_func($callback, $this->request);
     }
+
 
     public function renderView($view, $params = [])
     {
@@ -71,16 +74,19 @@ class Router
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
+
     public function renderContent($viewContent)
     {
         $layoutContent = $this->layoutContent();
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
+
     protected function layoutContent()
     {
+        $layout  = Application::$app->controller->layout;
         ob_start();
-        include_once Application::$ROOT_DIR."/views/layouts/main.php";
+        include_once Application::$ROOT_DIR."/views/layouts/$layout.php";
         return ob_get_clean();
     }
 
