@@ -1,34 +1,18 @@
 <h1>Register</h1>
 
-<form action="" method="post">
+<?php $form = \app\core\form\Form::begin('', 'post'); ?>
     <div class="row">
         <div class="col">
-            <div class="form-group">
-                <label>First Name</label>
-                <input type="text" name="firstName" class="form-control">
-            </div>
+            <?php echo $form->field($model, 'firstname'); ?>
         </div>
         <div class="col">
-            <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" name="lastName" class="form-control">
-            </div>
+            <?php echo $form->field($model, 'lastname'); ?>
         </div>
     </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" name="password" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Password Repeat</label>
-        <input type="password" name="confirmPassword" class="form-control">
-    </div>
-    <br>
-    <button type="submit" class="btn btn-primary">register</button>
-
-
-</form>
+<?php
+    echo $form->field($model, 'email')->emailField();
+    echo $form->field($model, 'password')->passwordField();
+    echo $form->field($model, 'confirmPassword')->passwordField(); ?>
+<br>
+<button type="submit" class="btn btn-primary">register</button>
+<?php \app\core\form\Form::end(); ?>
