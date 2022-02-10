@@ -3,3 +3,4 @@
 Readme.md
 .vscode
 runtime/*
+.env

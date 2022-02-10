@@ -11,12 +11,22 @@ use app\core\Model;
 
 class Form
 {
+    /**
+     * Begin HTML Form
+     * @param $action
+     * @param $method
+     * @return Form
+     */
     public static function begin($action, $method)
     {
         echo sprintf('<form action="%s" method="%s">', $action, $method);
         return new Form();
     }
 
+
+    /**
+     * End HTML Form
+     */
     public static function end()
     {
         echo '</form>';
