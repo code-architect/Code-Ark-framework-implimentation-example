@@ -6,6 +6,7 @@
 * @package app\core
 */
 namespace app\controllers;
+use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
 use app\models\User;
@@ -28,7 +29,8 @@ class AuthController extends Controller
             // Todo 1
             $user->loadData($request->getBody());
             if($user->validate() && $user->save()){
-                return "Success";
+                Application::$app->session->setFlash('success', 'Thanks for registering');
+                Application::$app->redirect('/');
             }
 
             return $this->render('register', [

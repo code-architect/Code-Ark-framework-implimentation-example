@@ -40,6 +40,14 @@
     </div>
 </nav>
 <div class="container">
+    <?php use app\core\Application;
+
+    if(Application::$app->session->getFlash('success')): ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo Application::$app->session->getFlash('success'); ?>
+    </div>
+    <?php endif; ?>
+
     {{content}}
 </div>
 
