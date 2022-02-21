@@ -1,18 +1,14 @@
-<h1>Contact</h1>
+<?php
+/**
+ * @var $model \app\models\User
+ */
+?>
+<h1>Login</h1>
 
-<form action="" method="post">
-    <div class="form-group">
-        <label>Subject</label>
-        <input type="text" name="subject" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Body</label>
-        <textarea name="body" class="form-control"></textarea>
-    </div>
+<?php $form = \app\core\form\Form::begin('', 'post');
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+echo $form->field($model, 'email')->emailField();
+echo $form->field($model, 'password')->passwordField(); ?>
+<br>
+<button type="submit" class="btn btn-primary">register</button>
+<?php \app\core\form\Form::end(); ?>
