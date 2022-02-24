@@ -1,9 +1,9 @@
 <?php
 
-/* Class AuthController
- *
+/**
+ * Class AuthController
  * @author: Indranil Samanta (code-architect)
-* @package app\core
+ * @package app\core
 */
 namespace app\controllers;
 use app\core\Application;
